@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .blog-post {
+            background-color: #fff;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .like-btn {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .like-btn.liked {
+            background-color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <div class="blog-post">
+        <h2>My Awesome Blog Post</h2>
+        <p>This is the content of my blog post. Isn't it amazing?</p>
+        <button class="like-btn">Like</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const likeButtons = document.querySelectorAll('.like-btn');
+            likeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    button.classList.toggle('liked');
+                    if (button.classList.contains('liked')) {
+                        button.textContent = 'Unlike';
+                    } else {
+                        button.textContent = 'Like';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
